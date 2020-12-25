@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  PeopleViewModel.swift
 //  FireApp
 //
 //  Created by boiler on 2020/12/20.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainViewModel {
+class PeopleViewModel {
     
     private let peopleRepository: PeopleRepositoryProtocol
     

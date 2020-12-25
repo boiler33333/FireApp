@@ -13,7 +13,7 @@ class PeopleViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let mainViewModel = MainViewModel(peopleRepository: PeopleRealtimeDBRepository())
+    private let peopleViewModel = PeopleViewModel(peopleRepository: PeopleRealtimeDBRepository())
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class PeopleViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         if currentUser != nil {
-            mainViewModel.downloadAllPeople {
+            peopleViewModel.downloadAllPeople {
                 self.tableView.reloadData()
             }
         }
@@ -44,7 +44,7 @@ extension PeopleViewController: UISearchBarDelegate {
         
         let text = (searchBar.text ?? "").lowercased()
         
-        mainViewModel.search(name: text) {
+        peopleViewModel.search(name: text) {
             self.tableView.reloadData()
             self.searchBar.resignFirstResponder()
         }
@@ -54,12 +54,12 @@ extension PeopleViewController: UISearchBarDelegate {
 extension PeopleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainViewModel.count()
+        return peopleViewModel.count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let person = mainViewModel.findPersonByIndex(indexPath.row)
+        let person = peopleViewModel.findPersonByIndex(indexPath.row)
         cell.textLabel?.text = "\(person.name) : \(person.mail) : \(person.age)"
         return cell
     }
