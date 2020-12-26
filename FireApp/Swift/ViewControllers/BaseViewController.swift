@@ -28,4 +28,11 @@ class BaseViewController: UIViewController {
             present(vc, animated: false, completion: nil)
         }
     }
+    
+    func showErrorDialog(title: String) {
+        let dialog = UIAlertController.init(title: title, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+        dialog.addAction(ok)
+        present(dialog, animated: true, completion: nil)
+    }
 }

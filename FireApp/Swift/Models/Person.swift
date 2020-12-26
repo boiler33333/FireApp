@@ -8,7 +8,7 @@
 import Foundation
 
 struct Person {
-    var id: Int
+    var id: String
     var name: String
     var mail: String
     var age: Int

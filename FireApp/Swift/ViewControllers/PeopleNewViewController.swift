@@ -7,8 +7,8 @@
 
 import UIKit
 
-class PeopleNewViewController: UIViewController {
-
+class PeopleNewViewController: BaseViewController {
+    
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var mainTextField: UITextField!
@@ -17,14 +17,36 @@ class PeopleNewViewController: UIViewController {
     
     @IBOutlet weak var createButton: UIButton!
     
-    // TODO: PeopleNewViewModel
+    var peopleRepository: PeopleRepositoryProtocol? = nil
+    
+    private var peopleNewViewModel: PeopleNewViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let peopleRepository = peopleRepository {
+            peopleNewViewModel = PeopleNewViewModel(peopleRepository: peopleRepository)
+        }
+        else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func doCreate(_ sender: Any) {
-        // TODO: create Person
+        let name = nameTextField.text ?? ""
+        let mail = mainTextField.text ?? ""
+        let age = Int(ageTextField.text ?? "") ?? 0
+        
+        do {
+            try peopleNewViewModel!.create(name: name, mail: mail, age: age) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        } catch {
+            super.showErrorDialog(title: error.localizedDescription)
+        }
     }
 }

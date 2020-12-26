@@ -13,12 +13,16 @@ class PeopleViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let peopleViewModel = PeopleViewModel(peopleRepository: PeopleRealtimeDBRepository())
+    private let peopleRepository = PeopleRealtimeDBRepository()
+    
+    private var peopleViewModel: PeopleViewModel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "People"
+        
+        self.peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,7 +37,8 @@ class PeopleViewController: BaseViewController {
     
     @IBAction func toPeopleNew(_ sender: Any) {
         let sb = UIStoryboard.init(name: "PeopleNew", bundle: nil)
-        let vc = sb.instantiateInitialViewController()!
+        let vc = sb.instantiateInitialViewController() as! PeopleNewViewController
+        vc.peopleRepository = peopleRepository
         self.navigationController!.pushViewController(vc, animated: true)
     }
 }
