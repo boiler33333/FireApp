@@ -40,18 +40,16 @@ class PeopleRealtimeDBRepository: PeopleRepositoryProtocol {
         }
     }
     
-    func create(name: String, mail: String, age: Int, completion: () -> Void) {
+    func create(person: Person) {
         
         let data = [
-            "name": name,
-            "mail": mail,
-            "age": age,
+            "name": person.name,
+            "mail": person.mail,
+            "age": person.age,
         ] as [String: Any]
         
         let newRef = ref.childByAutoId()
         newRef.setValue(data)
-        
-        completion()
     }
     
     func delete(id: String) {
@@ -77,5 +75,16 @@ class PeopleRealtimeDBRepository: PeopleRepositoryProtocol {
             }
             completion(people)
         }
+    }
+    
+    func update(person: Person) {
+        let data = [
+            "name": person.name,
+            "mail": person.mail,
+            "age": person.age,
+        ] as [String: Any]
+        
+        let newRef = ref.child(person.id)
+        newRef.setValue(data)
     }
 }

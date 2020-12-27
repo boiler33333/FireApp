@@ -9,9 +9,11 @@ protocol PeopleRepositoryProtocol {
     
     func all(completion: @escaping ([Person]?) -> Void)
     
-    func create(name: String, mail: String, age: Int, completion: () -> Void)
+    func create(person: Person)
     
     func delete(id: String)
     
     func search(name: String, completion: @escaping ([Person]?) -> Void)
+    
+    func update(person: Person)
 }

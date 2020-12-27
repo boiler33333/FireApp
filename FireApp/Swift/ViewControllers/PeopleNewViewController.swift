@@ -19,33 +19,31 @@ class PeopleNewViewController: BaseViewController {
     
     var peopleRepository: PeopleRepositoryProtocol? = nil
     
-    private var peopleNewViewModel: PeopleNewViewModel? = nil
+    private var peopleNewViewModel: PeopleNewViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if let peopleRepository = peopleRepository {
-            peopleNewViewModel = PeopleNewViewModel(peopleRepository: peopleRepository)
+        do {
+            peopleNewViewModel = try PeopleNewViewModel(peopleRepository: peopleRepository)
         }
-        else {
-            navigationController?.popViewController(animated: true)
+        catch {
+            super.showErrorDialog(title: error.localizedDescription) { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
     @IBAction func doCreate(_ sender: Any) {
-        let name = nameTextField.text ?? ""
-        let mail = mainTextField.text ?? ""
-        let age = Int(ageTextField.text ?? "") ?? 0
+        let name = nameTextField.text
+        let mail = mainTextField.text
+        let age = ageTextField.text
         
         do {
-            try peopleNewViewModel!.create(name: name, mail: mail, age: age) {
-                self.navigationController?.popViewController(animated: true)
-            }
-        } catch {
+            try peopleNewViewModel.create(name: name, mail: mail, age: age)
+            self.navigationController?.popViewController(animated: true)
+        }
+        catch {
             super.showErrorDialog(title: error.localizedDescription)
         }
     }

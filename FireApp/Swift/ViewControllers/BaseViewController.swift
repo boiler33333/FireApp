@@ -33,9 +33,9 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func showErrorDialog(title: String) {
+    func showErrorDialog(title: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let dialog = UIAlertController.init(title: title, message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+        let ok = UIAlertAction.init(title: "OK", style: .default, handler: handler)
         dialog.addAction(ok)
         present(dialog, animated: true, completion: nil)
     }
