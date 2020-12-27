@@ -23,6 +23,9 @@ class PeopleViewController: BaseViewController {
         self.navigationItem.title = "People"
         
         self.peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository)
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add,
+                                                                 target: self,
+                                                                 action: #selector(newPerson))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +38,7 @@ class PeopleViewController: BaseViewController {
         }
     }
     
-    @IBAction func toPeopleNew(_ sender: Any) {
+    @objc func newPerson() {
         let sb = UIStoryboard.init(name: "PeopleNew", bundle: nil)
         let vc = sb.instantiateInitialViewController() as! PeopleNewViewController
         vc.peopleRepository = peopleRepository

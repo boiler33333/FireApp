@@ -24,7 +24,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LG2-yd-649">
-                                <rect key="frame" x="0.0" y="178" width="414" height="684"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="142" id="CgP-kF-Fvp">
@@ -41,24 +41,15 @@
                                     <outlet property="delegate" destination="bEn-BN-UcY" id="w8k-j8-lsZ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4p-ou-QPr">
-                                <rect key="frame" x="141" y="124" width="132" height="30"/>
-                                <state key="normal" title="Create New Person"/>
-                                <connections>
-                                    <action selector="toPeopleNew:" destination="bEn-BN-UcY" eventType="touchUpInside" id="tvB-sJ-ttG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0el-pe-t2k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0el-pe-t2k" firstAttribute="trailing" secondItem="LG2-yd-649" secondAttribute="trailing" id="3sR-oC-qn6"/>
                             <constraint firstItem="0el-pe-t2k" firstAttribute="bottom" secondItem="LG2-yd-649" secondAttribute="bottom" id="50i-xp-jCo"/>
-                            <constraint firstItem="H4p-ou-QPr" firstAttribute="centerX" secondItem="4db-VZ-gWL" secondAttribute="centerX" id="BBy-ed-BY3"/>
-                            <constraint firstItem="H4p-ou-QPr" firstAttribute="top" secondItem="2fI-ae-xr3" secondAttribute="bottom" constant="24" id="DBZ-A1-00Y"/>
                             <constraint firstItem="2fI-ae-xr3" firstAttribute="leading" secondItem="0el-pe-t2k" secondAttribute="leading" id="EnD-Ll-Meq"/>
                             <constraint firstAttribute="trailing" secondItem="2fI-ae-xr3" secondAttribute="trailing" id="StQ-Ar-NUo"/>
-                            <constraint firstItem="LG2-yd-649" firstAttribute="top" secondItem="H4p-ou-QPr" secondAttribute="bottom" constant="24" id="Ux8-cb-uIh"/>
+                            <constraint firstItem="LG2-yd-649" firstAttribute="top" secondItem="2fI-ae-xr3" secondAttribute="bottom" id="Uqx-cy-YSO"/>
                             <constraint firstItem="LG2-yd-649" firstAttribute="leading" secondItem="0el-pe-t2k" secondAttribute="leading" id="nqo-GE-7SO"/>
                             <constraint firstItem="2fI-ae-xr3" firstAttribute="top" secondItem="0el-pe-t2k" secondAttribute="top" id="rq2-wK-iGz"/>
                         </constraints>
