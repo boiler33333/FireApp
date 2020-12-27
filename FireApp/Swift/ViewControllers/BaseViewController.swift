@@ -16,10 +16,14 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super .viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         currentUser = Auth.auth().currentUser
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(animated)
         
         if currentUser == nil {
             let sb = UIStoryboard.init(name: "Login", bundle: nil)

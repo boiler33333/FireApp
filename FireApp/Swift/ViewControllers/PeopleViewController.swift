@@ -25,8 +25,8 @@ class PeopleViewController: BaseViewController {
         self.peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if currentUser != nil {
             peopleViewModel.downloadAllPeople {
