@@ -29,6 +29,9 @@
 		075DE02B258F816300F3C31A /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DE02A258F816300F3C31A /* PeopleViewModel.swift */; };
 		075DE030258F81AF00F3C31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DE02F258F81AF00F3C31A /* AppDelegate.swift */; };
 		075DE03B258F81EA00F3C31A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075DE03A258F81EA00F3C31A /* GoogleService-Info.plist */; };
+		07B141A825981B6300D83BE1 /* PeopleEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B141A625981B6300D83BE1 /* PeopleEdit.storyboard */; };
+		07B141AD25981B8500D83BE1 /* PeopleEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B141AC25981B8500D83BE1 /* PeopleEditViewController.swift */; };
+		07B141BD25981D4800D83BE1 /* PeopleEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B141BC25981D4800D83BE1 /* PeopleEditViewModel.swift */; };
 		36317611C69E3BB1D6EA4148 /* Pods_FireAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392A1BAD5127146671C741A2 /* Pods_FireAppTests.framework */; };
 		9EFAC076C4DCCD3C7B109E37 /* Pods_FireAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FB7325CDB6D68E8F11C06E /* Pods_FireAppUITests.framework */; };
 		A6983305860921EE36E4AB33 /* Pods_FireApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46072A339E7D29250DCEFF2 /* Pods_FireApp.framework */; };
@@ -80,6 +83,9 @@
 		075DE02A258F816300F3C31A /* PeopleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		075DE02F258F81AF00F3C31A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		075DE03A258F81EA00F3C31A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/FireApp/FireApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07B141A725981B6300D83BE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PeopleEdit.storyboard; sourceTree = "<group>"; };
+		07B141AC25981B8500D83BE1 /* PeopleEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleEditViewController.swift; sourceTree = "<group>"; };
+		07B141BC25981D4800D83BE1 /* PeopleEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleEditViewModel.swift; sourceTree = "<group>"; };
 		0F4316511CD1234192848FA0 /* Pods-FireAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FireAppUITests/Pods-FireAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1AB9CF1CA38527CDDF96016C /* Pods-FireApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireApp.debug.xcconfig"; path = "Target Support Files/Pods-FireApp/Pods-FireApp.debug.xcconfig"; sourceTree = "<group>"; };
 		392A1BAD5127146671C741A2 /* Pods_FireAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,8 +206,9 @@
 				075DE000258F813800F3C31A /* LaunchScreen.storyboard */,
 				075DDFFE258F813800F3C31A /* Login.storyboard */,
 				075DE004258F813800F3C31A /* Main.storyboard */,
-				075DDFFC258F813800F3C31A /* People.storyboard */,
+				07B141A625981B6300D83BE1 /* PeopleEdit.storyboard */,
 				075DE002258F813800F3C31A /* PeopleNew.storyboard */,
+				075DDFFC258F813800F3C31A /* People.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 			children = (
 				075DE020258F815B00F3C31A /* BaseViewController.swift */,
 				075DE021258F815B00F3C31A /* LoginViewController.swift */,
+				07B141AC25981B8500D83BE1 /* PeopleEditViewController.swift */,
 				075DE022258F815B00F3C31A /* PeopleNewViewController.swift */,
 				075DE01F258F815B00F3C31A /* PeopleViewController.swift */,
 			);
@@ -228,8 +236,9 @@
 		075DDFF9258F805F00F3C31A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				075DE02A258F816300F3C31A /* PeopleViewModel.swift */,
+				07B141BC25981D4800D83BE1 /* PeopleEditViewModel.swift */,
 				0731DF0B2596B0AC005FCE3B /* PeopleNewViewModel.swift */,
+				075DE02A258F816300F3C31A /* PeopleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -388,6 +397,7 @@
 				075DE008258F813800F3C31A /* LaunchScreen.storyboard in Resources */,
 				075DE007258F813800F3C31A /* Login.storyboard in Resources */,
 				075DE03B258F81EA00F3C31A /* GoogleService-Info.plist in Resources */,
+				07B141A825981B6300D83BE1 /* PeopleEdit.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +516,9 @@
 				075DE01B258F815000F3C31A /* PeopleRealtimeDBRepository.swift in Sources */,
 				075DE024258F815B00F3C31A /* BaseViewController.swift in Sources */,
 				075DE00F258F814100F3C31A /* NSDictionary+Extension.swift in Sources */,
+				07B141BD25981D4800D83BE1 /* PeopleEditViewModel.swift in Sources */,
 				075DE030258F81AF00F3C31A /* AppDelegate.swift in Sources */,
+				07B141AD25981B8500D83BE1 /* PeopleEditViewController.swift in Sources */,
 				075DE01A258F815000F3C31A /* PeopleRepositoryProtocol.swift in Sources */,
 				075DE025258F815B00F3C31A /* LoginViewController.swift in Sources */,
 				075DE026258F815B00F3C31A /* PeopleNewViewController.swift in Sources */,
@@ -584,6 +596,14 @@
 				075DE005258F813800F3C31A /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		07B141A625981B6300D83BE1 /* PeopleEdit.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07B141A725981B6300D83BE1 /* Base */,
+			);
+			name = PeopleEdit.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2EW-WH-Pl7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--People Edit View Controller-->
+        <scene sceneID="qDA-a0-a8f">
+            <objects>
+                <viewController id="2EW-WH-Pl7" customClass="PeopleEditViewController" customModule="FireApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8aG-xX-Y6X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gp8-8s-2rw">
+                                <rect key="frame" x="107" y="92" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ess-k3-GCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-dG-2d9">
+                                <rect key="frame" x="107" y="150" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="zv0-Wp-2Dw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-F4-ssI">
+                                <rect key="frame" x="107" y="208" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="W7l-t8-unB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flc-YZ-8lo">
+                                <rect key="frame" x="181.5" y="290" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="doUpdate:" destination="2EW-WH-Pl7" eventType="touchUpInside" id="iZv-bc-twg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UbO-o6-FGk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2xS-dG-2d9" firstAttribute="top" secondItem="Gp8-8s-2rw" secondAttribute="bottom" constant="24" id="Ab1-kW-Pgi"/>
+                            <constraint firstItem="Gp8-8s-2rw" firstAttribute="top" secondItem="UbO-o6-FGk" secondAttribute="top" constant="48" id="Cts-s1-7g7"/>
+                            <constraint firstItem="OJ1-F4-ssI" firstAttribute="top" secondItem="2xS-dG-2d9" secondAttribute="bottom" constant="24" id="Hog-Sd-flS"/>
+                            <constraint firstItem="OJ1-F4-ssI" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="cS1-gA-kUh"/>
+                            <constraint firstItem="2xS-dG-2d9" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="iTo-aJ-fSz"/>
+                            <constraint firstItem="Flc-YZ-8lo" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="krw-I1-kFC"/>
+                            <constraint firstItem="Flc-YZ-8lo" firstAttribute="top" secondItem="OJ1-F4-ssI" secondAttribute="bottom" constant="48" id="sGN-jv-D4O"/>
+                            <constraint firstItem="Gp8-8s-2rw" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="zJz-Ol-92b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="OJ1-F4-ssI" id="bSM-ME-BXn"/>
+                        <outlet property="mailTextField" destination="2xS-dG-2d9" id="Fgs-Kk-2YO"/>
+                        <outlet property="nameTextField" destination="Gp8-8s-2rw" id="TIU-H3-j7c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YmU-KI-fOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-355" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

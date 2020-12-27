@@ -41,6 +41,14 @@ class PeopleViewController: BaseViewController {
         vc.peopleRepository = peopleRepository
         self.navigationController!.pushViewController(vc, animated: true)
     }
+    
+    private func edit(person: Person) {
+        let sb = UIStoryboard.init(name: "PeopleEdit", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! PeopleEditViewController
+        vc.person = person
+        vc.peopleRepository = peopleRepository
+        navigationController!.pushViewController(vc, animated: true)
+    }
 }
 
 extension PeopleViewController: UISearchBarDelegate {
@@ -80,5 +88,11 @@ extension PeopleViewController: UITableViewDelegate {
         if editingStyle == .delete {
             peopleViewModel.delete(row: indexPath.row)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = peopleViewModel.findPersonByIndex(indexPath.row)
+        edit(person: person)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
