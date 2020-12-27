@@ -20,12 +20,13 @@ class PeopleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "People"
+        navigationItem.title = "People"
         
-        self.peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository)
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(newPerson))
+        
+        peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository)
     }
     
     override func viewWillAppear(_ animated: Bool) {
