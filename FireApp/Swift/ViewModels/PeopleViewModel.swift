@@ -22,6 +22,10 @@ class PeopleViewModel {
         return people.count
     }
     
+    func delete(row i: Int) {
+        peopleRepository.delete(id: people[i].id)
+    }
+    
     func downloadAllPeople(completion: @escaping () -> Void) {
         peopleRepository.all { (people) in
             if let people = people {

@@ -11,7 +11,7 @@ protocol PeopleRepositoryProtocol {
     
     func create(name: String, mail: String, age: Int, completion: () -> Void)
     
-    func delete(id: Int)
+    func delete(id: String)
     
     func search(name: String, completion: @escaping ([Person]?) -> Void)
 }

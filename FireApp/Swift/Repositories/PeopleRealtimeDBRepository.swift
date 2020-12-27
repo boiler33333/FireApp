@@ -26,6 +26,11 @@ class PeopleRealtimeDBRepository: PeopleRepositoryProtocol {
                 let key = snap.key
                 let value = snap.value
                 
+                /* snapshot が更新前＋更新後の場合は、更新前を削除する */
+                if people.first(where: { $0.id == key }) != nil {
+                    people.removeAll()
+                }
+                
                 if let dict = value as? NSDictionary {
                     let person = dict.toPerson(id: key)
                     people.append(person)
@@ -49,8 +54,8 @@ class PeopleRealtimeDBRepository: PeopleRepositoryProtocol {
         completion()
     }
     
-    func delete(id: Int) {
-        ref.child("\(id)").removeValue()
+    func delete(id: String) {
+        ref.child(id).removeValue()
     }
     
     func search(name: String, completion: @escaping ([Person]?) -> Void) {
