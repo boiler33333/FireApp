@@ -46,7 +46,7 @@ class PeopleViewController: BaseViewController {
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
-    private func edit(person: Person) {
+    private func editPerson(_ person: Person) {
         let sb = UIStoryboard.init(name: "PeopleEdit", bundle: nil)
         let vc = sb.instantiateInitialViewController() as! PeopleEditViewController
         vc.person = person
@@ -96,7 +96,7 @@ extension PeopleViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = peopleViewModel.findPersonByIndex(indexPath.row)
-        edit(person: person)
+        editPerson(person)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
