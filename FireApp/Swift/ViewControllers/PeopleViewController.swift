@@ -13,7 +13,8 @@ class PeopleViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let peopleRepository = PeopleRealtimeDBRepository()
+//    private let peopleRepository = PeopleRealtimeDBRepository()
+    private let peopleRepository = PeopleCloudFirestoreRepository()
     
     private var peopleViewModel: PeopleViewModel!
         
@@ -89,8 +90,13 @@ extension PeopleViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             peopleViewModel.delete(row: indexPath.row)
+
+            if peopleRepository is PeopleCloudFirestoreRepository {
+                viewWillAppear(false)
+            }
         }
     }
     

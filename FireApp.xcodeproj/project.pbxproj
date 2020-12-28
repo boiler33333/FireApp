@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0731DF0C2596B0AC005FCE3B /* PeopleNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731DF0B2596B0AC005FCE3B /* PeopleNewViewModel.swift */; };
 		0731DF142596B9F3005FCE3B /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731DF132596B9F3005FCE3B /* ErrorCode.swift */; };
+		075AE84D25995442004C3E3D /* PeopleCloudFirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE84C25995442004C3E3D /* PeopleCloudFirestoreRepository.swift */; };
+		075AE85525996025004C3E3D /* QueryDocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE85425996025004C3E3D /* QueryDocumentSnapshot+Extension.swift */; };
 		075DDF87258F7E6400F3C31A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DDF86258F7E6400F3C31A /* SceneDelegate.swift */; };
 		075DDF8E258F7E6500F3C31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075DDF8D258F7E6500F3C31A /* Assets.xcassets */; };
 		075DDF9C258F7E6500F3C31A /* FireAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DDF9B258F7E6500F3C31A /* FireAppTests.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		0731DF0B2596B0AC005FCE3B /* PeopleNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNewViewModel.swift; sourceTree = "<group>"; };
 		0731DF132596B9F3005FCE3B /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		075AE84C25995442004C3E3D /* PeopleCloudFirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCloudFirestoreRepository.swift; sourceTree = "<group>"; };
+		075AE85425996025004C3E3D /* QueryDocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		075DDF81258F7E6400F3C31A /* FireApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075DDF86258F7E6400F3C31A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		075DDF8D258F7E6500F3C31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				075DE00E258F814100F3C31A /* NSDictionary+Extension.swift */,
+				075AE85425996025004C3E3D /* QueryDocumentSnapshot+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 		075DDFFA258F806E00F3C31A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				075AE84C25995442004C3E3D /* PeopleCloudFirestoreRepository.swift */,
 				075DE019258F815000F3C31A /* PeopleRealtimeDBRepository.swift */,
 				075DE018258F815000F3C31A /* PeopleRepositoryProtocol.swift */,
 			);
@@ -510,6 +516,7 @@
 			files = (
 				0731DF142596B9F3005FCE3B /* ErrorCode.swift in Sources */,
 				075DE014258F814700F3C31A /* Person.swift in Sources */,
+				075AE85525996025004C3E3D /* QueryDocumentSnapshot+Extension.swift in Sources */,
 				075DE02B258F816300F3C31A /* PeopleViewModel.swift in Sources */,
 				075DE023258F815B00F3C31A /* PeopleViewController.swift in Sources */,
 				0731DF0C2596B0AC005FCE3B /* PeopleNewViewModel.swift in Sources */,
@@ -522,6 +529,7 @@
 				075DE01A258F815000F3C31A /* PeopleRepositoryProtocol.swift in Sources */,
 				075DE025258F815B00F3C31A /* LoginViewController.swift in Sources */,
 				075DE026258F815B00F3C31A /* PeopleNewViewController.swift in Sources */,
+				075AE84D25995442004C3E3D /* PeopleCloudFirestoreRepository.swift in Sources */,
 				075DDF87258F7E6400F3C31A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
