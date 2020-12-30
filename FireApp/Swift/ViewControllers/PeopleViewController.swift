@@ -16,6 +16,8 @@ class PeopleViewController: BaseViewController {
 //    private let peopleRepository = PeopleRealtimeDBRepository()
     private let peopleRepository = PeopleCloudFirestoreRepository()
     
+    private let photosRepository = PhotosStrageRepository()
+    
     private var peopleViewModel: PeopleViewModel!
         
     override func viewDidLoad() {
@@ -27,7 +29,8 @@ class PeopleViewController: BaseViewController {
                                                                  target: self,
                                                                  action: #selector(newPerson))
         
-        peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository)
+        peopleViewModel = PeopleViewModel(peopleRepository: peopleRepository,
+                                          photosRepository: photosRepository)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,14 +47,16 @@ class PeopleViewController: BaseViewController {
         let sb = UIStoryboard.init(name: "PeopleNew", bundle: nil)
         let vc = sb.instantiateInitialViewController() as! PeopleNewViewController
         vc.peopleRepository = peopleRepository
+        vc.photosRepository = photosRepository
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
-    private func editPerson(_ person: Person) {
+    private func editPerson(at i: Int) {
         let sb = UIStoryboard.init(name: "PeopleEdit", bundle: nil)
         let vc = sb.instantiateInitialViewController() as! PeopleEditViewController
-        vc.person = person
+        vc.id = peopleViewModel.findPersonByIndex(i).id
         vc.peopleRepository = peopleRepository
+        vc.photosRepository = photosRepository
         navigationController!.pushViewController(vc, animated: true)
     }
 }
@@ -79,6 +84,13 @@ extension PeopleViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let person = peopleViewModel.findPersonByIndex(indexPath.row)
         cell.textLabel?.text = "\(person.name) : \(person.mail) : \(person.age)"
+        cell.accessoryType = .disclosureIndicator
+        cell.imageView?.image = UIImage(named: "no_image")
+        if let path = person.path {
+            peopleViewModel.downloadPersonImage(path: path) { (image) in
+                cell.imageView?.image = image
+            }
+        }
         return cell
     }
 }
@@ -101,8 +113,7 @@ extension PeopleViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let person = peopleViewModel.findPersonByIndex(indexPath.row)
-        editPerson(person)
+        editPerson(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

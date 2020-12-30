@@ -40,14 +40,27 @@ class PeopleRealtimeDBRepository: PeopleRepositoryProtocol {
         }
     }
     
+    func getPersonById(id: String, completion: @escaping (Person?) -> Void) {
+        ref.child(id).observe(DataEventType.value) { (snap) in
+            let value = snap.value
+            if let dict = value as? NSDictionary {
+                let person = dict.toPerson(id: id)
+                completion(person)
+            }
+            else {
+                completion(nil)
+            }
+        }
+    }
+    
     func create(person: Person) {
-        
-        let data = [
-            "name": person.name,
-            "mail": person.mail,
-            "age": person.age,
-        ] as [String: Any]
-        
+        var data: [String:Any] = [:]
+        data["name"] = person.name
+        data["mail"] = person.mail
+        data["age"] = person.age
+        if let path = person.path {
+            data["path"] = path
+        }
         let newRef = ref.childByAutoId()
         newRef.setValue(data)
     }
@@ -78,12 +91,13 @@ class PeopleRealtimeDBRepository: PeopleRepositoryProtocol {
     }
     
     func update(person: Person) {
-        let data = [
-            "name": person.name,
-            "mail": person.mail,
-            "age": person.age,
-        ] as [String: Any]
-        
+        var data: [String:Any] = [:]
+        data["name"] = person.name
+        data["mail"] = person.mail
+        data["age"] = person.age
+        if let path = person.path {
+            data["path"] = path
+        }
         let newRef = ref.child(person.id)
         newRef.setValue(data)
     }

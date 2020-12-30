@@ -13,6 +13,7 @@ extension NSDictionary {
         let name = self.value(forKey: "name") as! String
         let mail = self.value(forKey: "mail") as! String
         let age = self.value(forKey: "age") as! Int
-        return try! Person(id: id, name: name, mail: mail, age: age)
+        let path = self.value(forKey: "path") as? String
+        return try! Person(id: id, name: name, mail: mail, age: age, path: path)
     }
 }

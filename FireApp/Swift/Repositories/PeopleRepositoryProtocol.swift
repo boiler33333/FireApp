@@ -9,6 +9,8 @@ protocol PeopleRepositoryProtocol {
     
     func all(completion: @escaping ([Person]?) -> Void)
     
+    func getPersonById(id: String, completion: @escaping (Person?) -> Void)
+    
     func create(person: Person)
     
     func delete(id: String)

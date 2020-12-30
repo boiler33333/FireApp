@@ -5,17 +5,23 @@
 //  Created by boiler on 2020/12/20.
 //
 
-import Foundation
+import UIKit
 
 class PeopleViewModel {
     
-    private let peopleRepository: PeopleRepositoryProtocol
-    
     private var people: [Person]
     
-    init(people: [Person] = [], peopleRepository: PeopleRepositoryProtocol) {
-        self.peopleRepository = peopleRepository
+    private let peopleRepository: PeopleRepositoryProtocol
+    
+    private let photosRepository: PhotosRepositoryProtocol
+    
+    init(people: [Person] = [],
+         peopleRepository: PeopleRepositoryProtocol,
+         photosRepository: PhotosRepositoryProtocol) {
+        
         self.people = people
+        self.peopleRepository = peopleRepository
+        self.photosRepository = photosRepository
     }
     
     func count() -> Int {
@@ -30,7 +36,16 @@ class PeopleViewModel {
         peopleRepository.all { (people) in
             if let people = people {
                 self.people = people
-                completion()
+            }
+            completion()
+        }
+    }
+    
+    func downloadPersonImage(path: String, completion: @escaping (UIImage) -> Void) {
+        photosRepository.downloadJpgImage(path: path) { (data, error) in
+            if let data = data,
+               let image = UIImage(data: data) {
+                completion(image)
             }
         }
     }

@@ -5,7 +5,7 @@
 //  Created by boiler on 2020/12/20.
 //
 
-import Foundation
+import UIKit
 
 class Person {
     
@@ -17,6 +17,10 @@ class Person {
     
     var age: Int { return _age }
     
+    var path: String? { return _path }
+    
+    var image: UIImage? = nil
+    
     private var _id: String
     
     private var _name: String
@@ -25,13 +29,15 @@ class Person {
     
     private var _age: Int
     
+    private var _path: String?
+    
     private static  let maxNameLength = 10
     
     private static  let maxMailLength = 100
     
     private static  let maxAge = 200
     
-    init(id: String = "", name: String, mail: String, age: Int) throws {
+    init(id: String = "", name: String, mail: String, age: Int, path: String? = nil, image: UIImage? = nil) throws {
         try Person.validate(name: name)
         try Person.validate(mail: mail)
         try Person.validate(age: age)
@@ -39,6 +45,8 @@ class Person {
         _name = name
         _mail = mail
         _age = age
+        _path = path
+        self.image = image
     }
     
     private static func validate(name: String) throws {

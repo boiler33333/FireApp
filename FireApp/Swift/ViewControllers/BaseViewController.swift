@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 import Firebase
 
 class BaseViewController: UIViewController {
@@ -38,5 +39,23 @@ class BaseViewController: UIViewController {
         let ok = UIAlertAction.init(title: "OK", style: .default, handler: handler)
         dialog.addAction(ok)
         present(dialog, animated: true, completion: nil)
+    }
+    
+    func checkPhotoLibraryAuthorization(completion: @escaping () -> Void) {
+        if PHPhotoLibrary.authorizationStatus() == .authorized {
+            completion()
+        }
+        else {
+            PHPhotoLibrary.requestAuthorization { status in
+                if status == .authorized {
+                    DispatchQueue.main.async {
+                        completion()
+                    }
+                }
+                else if status == .denied {
+                    // TODO
+                }
+            }
+        }
     }
 }

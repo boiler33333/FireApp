@@ -16,8 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="4KD-ul-Gf8">
+                                <rect key="frame" x="157" y="92" width="100" height="100"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nOr-FZ-tm4">
+                                <rect key="frame" x="157" y="92" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8jm-TN-eDr"/>
+                                    <constraint firstAttribute="width" secondItem="nOr-FZ-tm4" secondAttribute="height" id="9qO-Dq-PgC"/>
+                                </constraints>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gp8-8s-2rw">
-                                <rect key="frame" x="107" y="92" width="200" height="34"/>
+                                <rect key="frame" x="107" y="258" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ess-k3-GCg"/>
                                 </constraints>
@@ -25,7 +35,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-dG-2d9">
-                                <rect key="frame" x="107" y="150" width="200" height="34"/>
+                                <rect key="frame" x="107" y="316" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="zv0-Wp-2Dw"/>
                                 </constraints>
@@ -33,7 +43,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-F4-ssI">
-                                <rect key="frame" x="107" y="208" width="200" height="34"/>
+                                <rect key="frame" x="107" y="374" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="W7l-t8-unB"/>
                                 </constraints>
@@ -41,30 +51,47 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flc-YZ-8lo">
-                                <rect key="frame" x="181.5" y="290" width="51" height="30"/>
+                                <rect key="frame" x="181.5" y="456" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="doUpdate:" destination="2EW-WH-Pl7" eventType="touchUpInside" id="iZv-bc-twg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-RS-7aM">
+                                <rect key="frame" x="162.5" y="204" width="89" height="30"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="toPhotos:" destination="2EW-WH-Pl7" eventType="touchUpInside" id="Qgt-K0-vqO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UbO-o6-FGk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nOr-FZ-tm4" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="0dq-dN-ipC"/>
+                            <constraint firstItem="4KD-ul-Gf8" firstAttribute="top" secondItem="nOr-FZ-tm4" secondAttribute="top" id="651-ft-RAG"/>
                             <constraint firstItem="2xS-dG-2d9" firstAttribute="top" secondItem="Gp8-8s-2rw" secondAttribute="bottom" constant="24" id="Ab1-kW-Pgi"/>
-                            <constraint firstItem="Gp8-8s-2rw" firstAttribute="top" secondItem="UbO-o6-FGk" secondAttribute="top" constant="48" id="Cts-s1-7g7"/>
                             <constraint firstItem="OJ1-F4-ssI" firstAttribute="top" secondItem="2xS-dG-2d9" secondAttribute="bottom" constant="24" id="Hog-Sd-flS"/>
+                            <constraint firstItem="iaT-RS-7aM" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="NMv-4Z-Cwq"/>
+                            <constraint firstItem="4KD-ul-Gf8" firstAttribute="trailing" secondItem="nOr-FZ-tm4" secondAttribute="trailing" id="Uo5-ir-DQF"/>
+                            <constraint firstItem="iaT-RS-7aM" firstAttribute="top" secondItem="4KD-ul-Gf8" secondAttribute="bottom" constant="12" id="XQy-v7-kP7"/>
+                            <constraint firstItem="4KD-ul-Gf8" firstAttribute="leading" secondItem="nOr-FZ-tm4" secondAttribute="leading" id="Y9X-Ze-Scb"/>
                             <constraint firstItem="OJ1-F4-ssI" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="cS1-gA-kUh"/>
+                            <constraint firstItem="4KD-ul-Gf8" firstAttribute="bottom" secondItem="nOr-FZ-tm4" secondAttribute="bottom" id="cdi-KU-gog"/>
                             <constraint firstItem="2xS-dG-2d9" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="iTo-aJ-fSz"/>
+                            <constraint firstItem="Gp8-8s-2rw" firstAttribute="top" secondItem="iaT-RS-7aM" secondAttribute="bottom" constant="24" id="jh5-pC-Eka"/>
                             <constraint firstItem="Flc-YZ-8lo" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="krw-I1-kFC"/>
+                            <constraint firstItem="nOr-FZ-tm4" firstAttribute="top" secondItem="UbO-o6-FGk" secondAttribute="top" constant="48" id="oko-dP-glT"/>
                             <constraint firstItem="Flc-YZ-8lo" firstAttribute="top" secondItem="OJ1-F4-ssI" secondAttribute="bottom" constant="48" id="sGN-jv-D4O"/>
                             <constraint firstItem="Gp8-8s-2rw" firstAttribute="centerX" secondItem="8aG-xX-Y6X" secondAttribute="centerX" id="zJz-Ol-92b"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ageTextField" destination="OJ1-F4-ssI" id="bSM-ME-BXn"/>
+                        <outlet property="imageView" destination="nOr-FZ-tm4" id="CHY-IX-9oZ"/>
                         <outlet property="mailTextField" destination="2xS-dG-2d9" id="Fgs-Kk-2YO"/>
                         <outlet property="nameTextField" destination="Gp8-8s-2rw" id="TIU-H3-j7c"/>
+                        <outlet property="selectImageButton" destination="iaT-RS-7aM" id="L8t-uV-eE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmU-KI-fOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -73,6 +100,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="no_image" width="170.5" height="170.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

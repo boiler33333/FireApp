@@ -33,13 +33,26 @@ class PeopleCloudFirestoreRepository: PeopleRepositoryProtocol {
         }
     }
     
+    func getPersonById(id: String, completion: @escaping (Person?) -> Void) {
+        ref.document(id).getDocument { (document, error) in
+            if let document = document {
+                let person = document.toPerson()
+                completion(person)
+            }
+            else {
+                completion(nil)
+            }
+        }
+    }
+    
     func create(person: Person) {
-        let data = [
-            "name": person.name,
-            "mail": person.mail,
-            "age": person.age
-        ] as [String: Any]
-        
+        var data: [String:Any] = [:]
+        data["name"] = person.name
+        data["mail"] = person.mail
+        data["age"] = person.age
+        if let path = person.path {
+            data["path"] = path
+        }
         ref.addDocument(data: data)
     }
     
@@ -62,12 +75,13 @@ class PeopleCloudFirestoreRepository: PeopleRepositoryProtocol {
     }
     
     func update(person: Person) {
-        let data = [
-            "name": person.name,
-            "mail": person.mail,
-            "age": person.age
-        ] as [String: Any]
-        
+        var data: [String:Any] = [:]
+        data["name"] = person.name
+        data["mail"] = person.mail
+        data["age"] = person.age
+        if let path = person.path {
+            data["path"] = path
+        }
         ref.document(person.id).setData(data)
     }
 }

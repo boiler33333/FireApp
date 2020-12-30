@@ -10,7 +10,13 @@
 		0731DF0C2596B0AC005FCE3B /* PeopleNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731DF0B2596B0AC005FCE3B /* PeopleNewViewModel.swift */; };
 		0731DF142596B9F3005FCE3B /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731DF132596B9F3005FCE3B /* ErrorCode.swift */; };
 		075AE84D25995442004C3E3D /* PeopleCloudFirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE84C25995442004C3E3D /* PeopleCloudFirestoreRepository.swift */; };
-		075AE85525996025004C3E3D /* QueryDocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE85425996025004C3E3D /* QueryDocumentSnapshot+Extension.swift */; };
+		075AE87225996EB4004C3E3D /* PhotosStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE87125996EB4004C3E3D /* PhotosStorageRepository.swift */; };
+		075AE87725996ED6004C3E3D /* PhotosRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE87625996ED6004C3E3D /* PhotosRepositoryProtocol.swift */; };
+		075AE88C259AA717004C3E3D /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075AE88A259AA717004C3E3D /* Photos.storyboard */; };
+		075AE899259AA774004C3E3D /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE898259AA774004C3E3D /* PhotosViewController.swift */; };
+		075AE8A3259AA8D0004C3E3D /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE8A2259AA8D0004C3E3D /* PhotosViewModel.swift */; };
+		075AE8B3259C7D78004C3E3D /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE8B2259C7D78004C3E3D /* DocumentSnapshot+Extension.swift */; };
+		075AE8C9259C9F27004C3E3D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AE8C8259C9F27004C3E3D /* UIImage+Extension.swift */; };
 		075DDF87258F7E6400F3C31A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DDF86258F7E6400F3C31A /* SceneDelegate.swift */; };
 		075DDF8E258F7E6500F3C31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075DDF8D258F7E6500F3C31A /* Assets.xcassets */; };
 		075DDF9C258F7E6500F3C31A /* FireAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DDF9B258F7E6500F3C31A /* FireAppTests.swift */; };
@@ -19,7 +25,6 @@
 		075DE007258F813800F3C31A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075DDFFE258F813800F3C31A /* Login.storyboard */; };
 		075DE008258F813800F3C31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075DE000258F813800F3C31A /* LaunchScreen.storyboard */; };
 		075DE009258F813800F3C31A /* PeopleNew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075DE002258F813800F3C31A /* PeopleNew.storyboard */; };
-		075DE00A258F813800F3C31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075DE004258F813800F3C31A /* Main.storyboard */; };
 		075DE00F258F814100F3C31A /* NSDictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DE00E258F814100F3C31A /* NSDictionary+Extension.swift */; };
 		075DE014258F814700F3C31A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DE013258F814700F3C31A /* Person.swift */; };
 		075DE01A258F815000F3C31A /* PeopleRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DE018258F815000F3C31A /* PeopleRepositoryProtocol.swift */; };
@@ -60,7 +65,13 @@
 		0731DF0B2596B0AC005FCE3B /* PeopleNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNewViewModel.swift; sourceTree = "<group>"; };
 		0731DF132596B9F3005FCE3B /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		075AE84C25995442004C3E3D /* PeopleCloudFirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCloudFirestoreRepository.swift; sourceTree = "<group>"; };
-		075AE85425996025004C3E3D /* QueryDocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
+		075AE87125996EB4004C3E3D /* PhotosStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosStorageRepository.swift; sourceTree = "<group>"; };
+		075AE87625996ED6004C3E3D /* PhotosRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepositoryProtocol.swift; sourceTree = "<group>"; };
+		075AE88B259AA717004C3E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
+		075AE898259AA774004C3E3D /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		075AE8A2259AA8D0004C3E3D /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		075AE8B2259C7D78004C3E3D /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
+		075AE8C8259C9F27004C3E3D /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		075DDF81258F7E6400F3C31A /* FireApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075DDF86258F7E6400F3C31A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		075DDF8D258F7E6500F3C31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +86,6 @@
 		075DDFFF258F813800F3C31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		075DE001258F813800F3C31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		075DE003258F813800F3C31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PeopleNew.storyboard; sourceTree = "<group>"; };
-		075DE005258F813800F3C31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		075DE00E258F814100F3C31A /* NSDictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+Extension.swift"; sourceTree = "<group>"; };
 		075DE013258F814700F3C31A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		075DE018258F815000F3C31A /* PeopleRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -209,10 +219,10 @@
 			children = (
 				075DE000258F813800F3C31A /* LaunchScreen.storyboard */,
 				075DDFFE258F813800F3C31A /* Login.storyboard */,
-				075DE004258F813800F3C31A /* Main.storyboard */,
 				07B141A625981B6300D83BE1 /* PeopleEdit.storyboard */,
 				075DE002258F813800F3C31A /* PeopleNew.storyboard */,
 				075DDFFC258F813800F3C31A /* People.storyboard */,
+				075AE88A259AA717004C3E3D /* Photos.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -220,8 +230,9 @@
 		075DDFF7258F803400F3C31A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				075AE8B2259C7D78004C3E3D /* DocumentSnapshot+Extension.swift */,
 				075DE00E258F814100F3C31A /* NSDictionary+Extension.swift */,
-				075AE85425996025004C3E3D /* QueryDocumentSnapshot+Extension.swift */,
+				075AE8C8259C9F27004C3E3D /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 				07B141AC25981B8500D83BE1 /* PeopleEditViewController.swift */,
 				075DE022258F815B00F3C31A /* PeopleNewViewController.swift */,
 				075DE01F258F815B00F3C31A /* PeopleViewController.swift */,
+				075AE898259AA774004C3E3D /* PhotosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +256,7 @@
 				07B141BC25981D4800D83BE1 /* PeopleEditViewModel.swift */,
 				0731DF0B2596B0AC005FCE3B /* PeopleNewViewModel.swift */,
 				075DE02A258F816300F3C31A /* PeopleViewModel.swift */,
+				075AE8A2259AA8D0004C3E3D /* PhotosViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -254,6 +267,8 @@
 				075AE84C25995442004C3E3D /* PeopleCloudFirestoreRepository.swift */,
 				075DE019258F815000F3C31A /* PeopleRealtimeDBRepository.swift */,
 				075DE018258F815000F3C31A /* PeopleRepositoryProtocol.swift */,
+				075AE87625996ED6004C3E3D /* PhotosRepositoryProtocol.swift */,
+				075AE87125996EB4004C3E3D /* PhotosStorageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -398,10 +413,10 @@
 			files = (
 				075DE009258F813800F3C31A /* PeopleNew.storyboard in Resources */,
 				075DE006258F813800F3C31A /* People.storyboard in Resources */,
-				075DE00A258F813800F3C31A /* Main.storyboard in Resources */,
 				075DDF8E258F7E6500F3C31A /* Assets.xcassets in Resources */,
 				075DE008258F813800F3C31A /* LaunchScreen.storyboard in Resources */,
 				075DE007258F813800F3C31A /* Login.storyboard in Resources */,
+				075AE88C259AA717004C3E3D /* Photos.storyboard in Resources */,
 				075DE03B258F81EA00F3C31A /* GoogleService-Info.plist in Resources */,
 				07B141A825981B6300D83BE1 /* PeopleEdit.storyboard in Resources */,
 			);
@@ -514,20 +529,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075AE8B3259C7D78004C3E3D /* DocumentSnapshot+Extension.swift in Sources */,
 				0731DF142596B9F3005FCE3B /* ErrorCode.swift in Sources */,
 				075DE014258F814700F3C31A /* Person.swift in Sources */,
-				075AE85525996025004C3E3D /* QueryDocumentSnapshot+Extension.swift in Sources */,
 				075DE02B258F816300F3C31A /* PeopleViewModel.swift in Sources */,
 				075DE023258F815B00F3C31A /* PeopleViewController.swift in Sources */,
 				0731DF0C2596B0AC005FCE3B /* PeopleNewViewModel.swift in Sources */,
 				075DE01B258F815000F3C31A /* PeopleRealtimeDBRepository.swift in Sources */,
 				075DE024258F815B00F3C31A /* BaseViewController.swift in Sources */,
 				075DE00F258F814100F3C31A /* NSDictionary+Extension.swift in Sources */,
+				075AE8C9259C9F27004C3E3D /* UIImage+Extension.swift in Sources */,
+				075AE899259AA774004C3E3D /* PhotosViewController.swift in Sources */,
+				075AE87225996EB4004C3E3D /* PhotosStorageRepository.swift in Sources */,
 				07B141BD25981D4800D83BE1 /* PeopleEditViewModel.swift in Sources */,
+				075AE8A3259AA8D0004C3E3D /* PhotosViewModel.swift in Sources */,
 				075DE030258F81AF00F3C31A /* AppDelegate.swift in Sources */,
 				07B141AD25981B8500D83BE1 /* PeopleEditViewController.swift in Sources */,
 				075DE01A258F815000F3C31A /* PeopleRepositoryProtocol.swift in Sources */,
 				075DE025258F815B00F3C31A /* LoginViewController.swift in Sources */,
+				075AE87725996ED6004C3E3D /* PhotosRepositoryProtocol.swift in Sources */,
 				075DE026258F815B00F3C31A /* PeopleNewViewController.swift in Sources */,
 				075AE84D25995442004C3E3D /* PeopleCloudFirestoreRepository.swift in Sources */,
 				075DDF87258F7E6400F3C31A /* SceneDelegate.swift in Sources */,
@@ -566,6 +586,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		075AE88A259AA717004C3E3D /* Photos.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				075AE88B259AA717004C3E3D /* Base */,
+			);
+			name = Photos.storyboard;
+			sourceTree = "<group>";
+		};
 		075DDFFC258F813800F3C31A /* People.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -596,14 +624,6 @@
 				075DE003258F813800F3C31A /* Base */,
 			);
 			name = PeopleNew.storyboard;
-			sourceTree = "<group>";
-		};
-		075DE004258F813800F3C31A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				075DE005258F813800F3C31A /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		07B141A625981B6300D83BE1 /* PeopleEdit.storyboard */ = {
